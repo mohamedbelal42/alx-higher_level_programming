@@ -3,24 +3,24 @@
 
 /**
  * insert_node - inserts node in sorted list
- * @h: address of head pointer
- * @num: number to insert
+ * @head: address of head pointer
+ * @number: number to insert
  * Return: inserted node
  */
 
-listint_t *insert_node(listint_t **h, int num)
+listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *node = *h, *new = malloc(sizeof(listint_t));
+	listint_t *node = *head, *new = malloc(sizeof(listint_t));
 
 	if (!new)
 		return (NULL);
-	new->n = num;
+	new->n = number;
 	new->next = NULL;
 
 	if (!node || new->n < node->n)
 	{
 		new->next = node;
-		return (*h = new);
+		return (*head = new);
 	}
 	while (node)
 	{
